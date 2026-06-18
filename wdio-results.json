@@ -2,202 +2,202 @@
   {
     "name": "TC000 [Setup]: Mock fetch for E2E tests",
     "status": "PASSED",
-    "duration": "172 ms"
+    "duration": "721 ms"
   },
   {
     "name": "TC001 [Navigation]: Navigate to the base URL and verify login page",
     "status": "PASSED",
-    "duration": "75 ms"
+    "duration": "617 ms"
   },
   {
     "name": "TC002 [Login]: Enter valid email",
     "status": "PASSED",
-    "duration": "617 ms"
+    "duration": "1544 ms"
   },
   {
     "name": "TC003 [Login]: Enter valid password",
     "status": "PASSED",
-    "duration": "379 ms"
+    "duration": "1798 ms"
   },
   {
     "name": "TC004 [Login]: Submit Button Click \"Sign In\" with valid data",
     "status": "PASSED",
-    "duration": "2951 ms"
+    "duration": "3295 ms"
   },
   {
     "name": "TC005 [Dashboard]: Verify greeting message appears",
     "status": "PASSED",
-    "duration": "93 ms"
+    "duration": "1921 ms"
   },
   {
     "name": "TC006 [Navigation]: Click \"Student Profile\" in sidebar",
     "status": "PASSED",
-    "duration": "388 ms"
+    "duration": "1240 ms"
   },
   {
     "name": "TC007 [Navigation]: Click \"Attendance\" in sidebar",
     "status": "PASSED",
-    "duration": "825 ms"
+    "duration": "899 ms"
   },
   {
     "name": "TC008 [Navigation]: Click \"Daily Tests\" in sidebar",
     "status": "PASSED",
-    "duration": "896 ms"
+    "duration": "2415 ms"
   },
   {
     "name": "TC009 [Navigation]: Click \"Assignments\" in sidebar",
     "status": "PASSED",
-    "duration": "481 ms"
+    "duration": "1356 ms"
   },
   {
     "name": "TC010 [Navigation]: Click \"Announcements\" in sidebar",
     "status": "PASSED",
-    "duration": "201 ms"
+    "duration": "1091 ms"
   },
   {
     "name": "TC011 [Navigation]: Click \"Weekly Reports\" in sidebar",
     "status": "PASSED",
-    "duration": "309 ms"
+    "duration": "1348 ms"
   },
   {
     "name": "TC012 [Navigation]: Click \"Subject Performance\" in sidebar",
     "status": "PASSED",
-    "duration": "542 ms"
+    "duration": "1469 ms"
   },
   {
     "name": "TC013 [Navigation]: Click \"Yearly Progress\" in sidebar",
     "status": "PASSED",
-    "duration": "725 ms"
+    "duration": "2206 ms"
   },
   {
     "name": "TC014 [Navigation]: Click \"Teacher Remarks\" in sidebar",
     "status": "PASSED",
-    "duration": "953 ms"
+    "duration": "1962 ms"
   },
   {
     "name": "TC015 [Navigation]: Click \"Dashboard\" to return home",
     "status": "PASSED",
-    "duration": "439 ms"
+    "duration": "3667 ms"
   },
   {
     "name": "TC016 [Navigation]: Dashboard Quick Link \"Attendance\"",
     "status": "PASSED",
-    "duration": "696 ms"
+    "duration": "1042 ms"
   },
   {
     "name": "TC017 [Navigation]: Return to Dashboard from Attendance",
     "status": "PASSED",
-    "duration": "807 ms"
+    "duration": "700 ms"
   },
   {
     "name": "TC018 [Navigation]: Dashboard Quick Link \"Assignments\"",
     "status": "PASSED",
-    "duration": "301 ms"
+    "duration": "426 ms"
   },
   {
     "name": "TC019 [Navigation]: Return to Dashboard from Assignments",
     "status": "PASSED",
-    "duration": "722 ms"
+    "duration": "432 ms"
   },
   {
     "name": "TC020 [Navigation]: Dashboard Quick Link \"Tests\"",
     "status": "PASSED",
-    "duration": "571 ms"
+    "duration": "408 ms"
   },
   {
     "name": "TC021 [Dashboard]: Verify Quick Access presence",
     "status": "PASSED",
-    "duration": "526 ms"
+    "duration": "805 ms"
   },
   {
     "name": "TC022 [Student Profile]: Verify Overall Grade StatCard",
     "status": "PASSED",
-    "duration": "269 ms"
+    "duration": "317 ms"
   },
   {
     "name": "TC023 [Student Profile]: Verify Roll Number",
     "status": "PASSED",
-    "duration": "75 ms"
+    "duration": "54 ms"
   },
   {
     "name": "TC024 [Student Profile]: Verify Class details",
     "status": "PASSED",
-    "duration": "104 ms"
+    "duration": "51 ms"
   },
   {
     "name": "TC025 [Student Profile]: Verify Parent Name",
     "status": "PASSED",
-    "duration": "54 ms"
+    "duration": "61 ms"
   },
   {
     "name": "TC026 [Student Profile]: Verify DOB",
     "status": "PASSED",
-    "duration": "48 ms"
+    "duration": "54 ms"
   },
   {
     "name": "TC027 [Student Profile]: Verify Academic Year",
     "status": "PASSED",
-    "duration": "69 ms"
+    "duration": "51 ms"
   },
   {
     "name": "TC028 [Attendance]: Check Total Days Stat",
     "status": "PASSED",
-    "duration": "596 ms"
+    "duration": "734 ms"
   },
   {
     "name": "TC029 [Attendance]: Check Present Stat",
     "status": "PASSED",
-    "duration": "109 ms"
+    "duration": "115 ms"
   },
   {
     "name": "TC030 [Attendance]: Check Absent Stat",
     "status": "PASSED",
-    "duration": "98 ms"
+    "duration": "95 ms"
   },
   {
     "name": "TC031 [Attendance]: Check Late Stat",
     "status": "PASSED",
-    "duration": "113 ms"
+    "duration": "125 ms"
   },
   {
     "name": "TC032 [Attendance]: Check BarChart renders",
     "status": "PASSED",
-    "duration": "60 ms"
+    "duration": "77 ms"
   },
   {
     "name": "TC033 [Attendance]: Check PieChart renders",
     "status": "PASSED",
-    "duration": "41 ms"
+    "duration": "50 ms"
   },
   {
     "name": "TC034 [Daily Tests]: Open tab",
     "status": "PASSED",
-    "duration": "269 ms"
+    "duration": "522 ms"
   },
   {
     "name": "TC035 [Daily Tests]: Click Mathematics filter",
     "status": "PASSED",
-    "duration": "401 ms"
+    "duration": "585 ms"
   },
   {
     "name": "TC036 [Daily Tests]: Verify Math content",
     "status": "PASSED",
-    "duration": "58 ms"
+    "duration": "78 ms"
   },
   {
     "name": "TC037 [Daily Tests]: Click Science filter",
     "status": "PASSED",
-    "duration": "389 ms"
+    "duration": "467 ms"
   },
   {
     "name": "TC038 [Daily Tests]: Verify Science content",
     "status": "PASSED",
-    "duration": "39 ms"
+    "duration": "70 ms"
   },
   {
     "name": "TC039 [Daily Tests]: Click English filter",
     "status": "PASSED",
-    "duration": "284 ms"
+    "duration": "441 ms"
   },
   {
     "name": "TC040 [Daily Tests]: Verify English content",
@@ -207,267 +207,267 @@
   {
     "name": "TC041 [Daily Tests]: Click Social Studies filter",
     "status": "PASSED",
-    "duration": "307 ms"
+    "duration": "327 ms"
   },
   {
     "name": "TC042 [Daily Tests]: Verify Social Studies content",
     "status": "PASSED",
-    "duration": "44 ms"
+    "duration": "124 ms"
   },
   {
     "name": "TC043 [Daily Tests]: Click Computer Science filter",
     "status": "PASSED",
-    "duration": "183 ms"
+    "duration": "435 ms"
   },
   {
     "name": "TC044 [Daily Tests]: Verify Computer Science content",
     "status": "PASSED",
-    "duration": "68 ms"
+    "duration": "107 ms"
   },
   {
     "name": "TC045 [Daily Tests]: Click Tamil filter",
     "status": "PASSED",
-    "duration": "262 ms"
+    "duration": "453 ms"
   },
   {
     "name": "TC046 [Daily Tests]: Verify Tamil content",
     "status": "PASSED",
-    "duration": "50 ms"
+    "duration": "79 ms"
   },
   {
     "name": "TC047 [Daily Tests]: Click All filter",
     "status": "PASSED",
-    "duration": "232 ms"
+    "duration": "370 ms"
   },
   {
     "name": "TC048 [Assignments]: Open tab",
     "status": "PASSED",
-    "duration": "188 ms"
+    "duration": "220 ms"
   },
   {
     "name": "TC049 [Assignments]: Filter Pending",
     "status": "PASSED",
-    "duration": "147 ms"
+    "duration": "181 ms"
   },
   {
     "name": "TC050 [Assignments]: Filter Submitted",
     "status": "PASSED",
-    "duration": "103 ms"
+    "duration": "521 ms"
   },
   {
     "name": "TC051 [Assignments]: Filter Overdue",
     "status": "PASSED",
-    "duration": "139 ms"
+    "duration": "1187 ms"
   },
   {
     "name": "TC052 [Assignments]: Filter All",
     "status": "PASSED",
-    "duration": "125 ms"
+    "duration": "732 ms"
   },
   {
     "name": "TC053 [Assignments]: Verify Overdue badge exists",
     "status": "PASSED",
-    "duration": "37 ms"
+    "duration": "137 ms"
   },
   {
     "name": "TC054 [Announcements]: Open tab",
     "status": "PASSED",
-    "duration": "99 ms"
+    "duration": "748 ms"
   },
   {
     "name": "TC055 [Announcements]: Verify Mark as read button",
     "status": "PASSED",
-    "duration": "92 ms"
+    "duration": "288 ms"
   },
   {
     "name": "TC056 [Announcements]: Click Mark as read",
     "status": "PASSED",
-    "duration": "121 ms"
+    "duration": "1413 ms"
   },
   {
     "name": "TC057 [Announcements]: Verify item date",
     "status": "PASSED",
-    "duration": "45 ms"
+    "duration": "188 ms"
   },
   {
     "name": "TC058 [Weekly Reports]: Open tab",
     "status": "PASSED",
-    "duration": "145 ms"
+    "duration": "800 ms"
   },
   {
     "name": "TC059 [Weekly Reports]: Click Week 22",
     "status": "PASSED",
-    "duration": "141 ms"
+    "duration": "439 ms"
   },
   {
     "name": "TC060 [Weekly Reports]: Verify Week 22 data",
     "status": "PASSED",
-    "duration": "47 ms"
+    "duration": "63 ms"
   },
   {
     "name": "TC061 [Weekly Reports]: Click Week 23",
     "status": "PASSED",
-    "duration": "107 ms"
+    "duration": "241 ms"
   },
   {
     "name": "TC062 [Weekly Reports]: Verify Week 23 data",
     "status": "PASSED",
-    "duration": "38 ms"
+    "duration": "182 ms"
   },
   {
     "name": "TC063 [Weekly Reports]: Verify Teacher Remarks title",
     "status": "PASSED",
-    "duration": "60 ms"
+    "duration": "65 ms"
   },
   {
     "name": "TC064 [Weekly Reports]: Verify Improvement Area",
     "status": "PASSED",
-    "duration": "118 ms"
+    "duration": "151 ms"
   },
   {
     "name": "TC065 [Subject Performance]: Open tab",
     "status": "PASSED",
-    "duration": "383 ms"
+    "duration": "366 ms"
   },
   {
     "name": "TC066 [Subject Performance]: Highest metric exists",
     "status": "PASSED",
-    "duration": "56 ms"
+    "duration": "453 ms"
   },
   {
     "name": "TC067 [Subject Performance]: Lowest metric exists",
     "status": "PASSED",
-    "duration": "111 ms"
+    "duration": "794 ms"
   },
   {
     "name": "TC068 [Subject Performance]: Average metric exists",
     "status": "PASSED",
-    "duration": "48 ms"
+    "duration": "298 ms"
   },
   {
     "name": "TC069 [Subject Performance]: Tests Taken metric exists",
     "status": "PASSED",
-    "duration": "57 ms"
+    "duration": "145 ms"
   },
   {
     "name": "TC070 [Subject Performance]: Click Science filter",
     "status": "PASSED",
-    "duration": "308 ms"
+    "duration": "955 ms"
   },
   {
     "name": "TC071 [Subject Performance]: Verify Science table header",
     "status": "PASSED",
-    "duration": "111 ms"
+    "duration": "812 ms"
   },
   {
     "name": "TC072 [Subject Performance]: Click English filter",
     "status": "PASSED",
-    "duration": "430 ms"
+    "duration": "1715 ms"
   },
   {
     "name": "TC073 [Subject Performance]: Verify English table header",
     "status": "PASSED",
-    "duration": "191 ms"
+    "duration": "549 ms"
   },
   {
     "name": "TC074 [Subject Performance]: Click Social Studies filter",
     "status": "PASSED",
-    "duration": "882 ms"
+    "duration": "1513 ms"
   },
   {
     "name": "TC075 [Subject Performance]: Verify Social table header",
     "status": "PASSED",
-    "duration": "101 ms"
+    "duration": "232 ms"
   },
   {
     "name": "TC076 [Subject Performance]: Click Computer Science filter",
     "status": "PASSED",
-    "duration": "856 ms"
+    "duration": "2785 ms"
   },
   {
     "name": "TC077 [Subject Performance]: Verify CS table header",
     "status": "PASSED",
-    "duration": "56 ms"
+    "duration": "818 ms"
   },
   {
     "name": "TC078 [Subject Performance]: Click Tamil filter",
     "status": "PASSED",
-    "duration": "385 ms"
+    "duration": "825 ms"
   },
   {
     "name": "TC079 [Subject Performance]: Verify Tamil table header",
     "status": "PASSED",
-    "duration": "38 ms"
+    "duration": "243 ms"
   },
   {
     "name": "TC080 [Subject Performance]: Click Mathematics filter",
     "status": "PASSED",
-    "duration": "301 ms"
+    "duration": "1737 ms"
   },
   {
     "name": "TC081 [Subject Performance]: AreaChart renders",
     "status": "PASSED",
-    "duration": "26 ms"
+    "duration": "671 ms"
   },
   {
     "name": "TC082 [Yearly Progress]: Open tab",
     "status": "PASSED",
-    "duration": "433 ms"
+    "duration": "1429 ms"
   },
   {
     "name": "TC083 [Yearly Progress]: Verify overall GPA",
     "status": "PASSED",
-    "duration": "96 ms"
+    "duration": "308 ms"
   },
   {
     "name": "TC084 [Yearly Progress]: Verify Best Subject StatCard",
     "status": "PASSED",
-    "duration": "89 ms"
+    "duration": "233 ms"
   },
   {
     "name": "TC085 [Yearly Progress]: Verify Annual Attendance StatCard",
     "status": "PASSED",
-    "duration": "202 ms"
+    "duration": "219 ms"
   },
   {
     "name": "TC086 [Yearly Progress]: Verify Strength Areas",
     "status": "PASSED",
-    "duration": "97 ms"
+    "duration": "159 ms"
   },
   {
     "name": "TC087 [Yearly Progress]: Verify Areas for Improvement",
     "status": "PASSED",
-    "duration": "72 ms"
+    "duration": "107 ms"
   },
   {
     "name": "TC088 [Teacher Remarks]: Open tab",
     "status": "PASSED",
-    "duration": "541 ms"
+    "duration": "570 ms"
   },
   {
     "name": "TC089 [Teacher Remarks]: Verify grid renders",
     "status": "PASSED",
-    "duration": "76 ms"
+    "duration": "75 ms"
   },
   {
     "name": "TC090 [Teacher Remarks]: Verify Science Tag",
     "status": "PASSED",
-    "duration": "58 ms"
+    "duration": "109 ms"
   },
   {
     "name": "TC091 [Teacher Remarks]: Verify Math Tag",
     "status": "PASSED",
-    "duration": "51 ms"
+    "duration": "40 ms"
   },
   {
     "name": "TC092 [Teacher Remarks]: Verify Class Teacher Tag",
     "status": "PASSED",
-    "duration": "112 ms"
+    "duration": "48 ms"
   },
   {
     "name": "TC093 [Teacher Remarks]: Verify CS Tag",
     "status": "PASSED",
-    "duration": "57 ms"
+    "duration": "46 ms"
   },
   {
     "name": "TC094 [Teacher Remarks]: Verify emoji icons render",
@@ -477,41 +477,41 @@
   {
     "name": "TC095 [Sidebar]: Verify App Title",
     "status": "PASSED",
-    "duration": "77 ms"
+    "duration": "46 ms"
   },
   {
     "name": "TC096 [Sidebar]: Verify term info",
     "status": "PASSED",
-    "duration": "98 ms"
+    "duration": "47 ms"
   },
   {
     "name": "TC097 [Dashboard]: Switch back to Dashboard",
     "status": "PASSED",
-    "duration": "260 ms"
+    "duration": "316 ms"
   },
   {
     "name": "TC098 [Dashboard]: Verify Quick Stats Attendance",
     "status": "PASSED",
-    "duration": "68 ms"
+    "duration": "56 ms"
   },
   {
     "name": "TC099 [Dashboard]: Verify Quick Stats Performance",
     "status": "PASSED",
-    "duration": "45 ms"
+    "duration": "92 ms"
   },
   {
     "name": "TC100 [Dashboard]: Verify Quick Stats Pending",
     "status": "PASSED",
-    "duration": "52 ms"
+    "duration": "65 ms"
   },
   {
     "name": "TC101 [Logout]: Click Sign Out",
     "status": "PASSED",
-    "duration": "233 ms"
+    "duration": "219 ms"
   },
   {
     "name": "TC102 [Logout]: Verify returned to Login",
     "status": "PASSED",
-    "duration": "49 ms"
+    "duration": "44 ms"
   }
 ]

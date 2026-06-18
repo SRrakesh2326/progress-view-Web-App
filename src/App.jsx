@@ -142,10 +142,17 @@ const StatCard = ({ icon, label, value, sub, accent }) => (
   </div>
 );
 
-const SectionHeader = ({ title, subtitle }) => (
-  <div style={{ marginBottom:20 }}>
-    <h2 style={{ fontSize:18, fontWeight:700, color:C.gray900, margin:0 }}>{title}</h2>
-    {subtitle && <p style={{ fontSize:13, color:C.gray500, margin:"4px 0 0" }}>{subtitle}</p>}
+const SectionHeader = ({ title, subtitle, onBack }) => (
+  <div style={{ marginBottom:20, display:"flex", alignItems:"center", gap:12 }}>
+    {onBack && (
+      <button onClick={onBack} style={{ background:C.white, border:`1px solid ${C.gray200}`, cursor:"pointer", fontSize:18, display:"flex", alignItems:"center", justifyContent:"center", width:36, height:36, borderRadius:8, color:C.gray700 }}>
+        ←
+      </button>
+    )}
+    <div>
+      <h2 style={{ fontSize:18, fontWeight:700, color:C.gray900, margin:0 }}>{title}</h2>
+      {subtitle && <p style={{ fontSize:13, color:C.gray500, margin:"4px 0 0" }}>{subtitle}</p>}
+    </div>
   </div>
 );
 
@@ -254,54 +261,24 @@ const LoginPage = ({ onLogin }) => {
   const [error, setError] = useState("");
 
   const handleLogin = async () => {
-  if (!email || !password) {
-    setError("Please enter your credentials.");
-    return;
-  }
+    if (!email || !password) {
+      setError("Please enter your credentials.");
+      return;
+    }
+    setLoading(true);
+    setError("");
 
-  setLoading(true);
-  setError("");
-
-  try {
-    const response = await fetch(
-      "http://localhost/progress-backend/login.php",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
+    setTimeout(() => {
+      setLoading(false);
+      if (email === "parent@sunriseacademy.edu" && password === "password123") {
+        localStorage.setItem("userName", "Rejina");
+        localStorage.setItem("userRole", "Parent");
+        onLogin();
+      } else {
+        setError("Invalid credentials. Use parent@sunriseacademy.edu / password123");
       }
-    );
-
-    const data = await response.json();
-
-    setLoading(false);
-
-    if (data.success) {
-
-  // Store logged-in user details
-  localStorage.setItem("userName", data.name);
-  localStorage.setItem("userRole", data.role);
-
-  alert("Welcome " + data.name);
-
-  onLogin();
-
-} else {
-
-  setError(data.message);
-
-}
-  } catch (err) {
-    setLoading(false);
-    setError("Could not connect to the server.");
-    console.error(err);
-  }
-};
+    }, 800);
+  };
 
   return (
     <div style={{ minHeight:"100vh", background:`linear-gradient(135deg, ${C.navyDark} 0%, ${C.navy} 60%, #1A56DB 100%)`,
@@ -470,29 +447,13 @@ const Dashboard = ({ onNav }) => {
 };
 
 // ─── STUDENT PROFILE ─────────────────────────────────────────────────────────
-const StudentProfile = () => {
-  const [s, setS] = useState(null);
-
-useEffect(() => {
-  fetch("http://localhost/progress-backend/get_student.php")
-    .then((res) => res.json())
-    .then((data) => {
-      if (data.success) {
-        setS(data.student);
-      } else {
-        console.error(data.message);
-      }
-    })
-    .catch((err) => console.error(err));
-}, []);
-if (!s) {
-  return <h2>Loading student profile...</h2>;
-}
+const StudentProfile = ({ onNav }) => {
+  const s = STUDENTS[0];
   const avgMarks = Math.round(TESTS.reduce((a,t)=>a+t.marks/t.max*100,0)/TESTS.length);
 
   return (
     <div>
-      <SectionHeader title="Student Profile" subtitle="Academic and personal information" />
+      <SectionHeader title="Student Profile" subtitle="Academic and personal information" onBack={() => onNav("dashboard")} />
       <div style={{ display:"grid", gridTemplateColumns:"300px 1fr", gap:18 }}>
         {/* Left: identity card */}
         <div style={{ display:"flex", flexDirection:"column", gap:14 }}>
@@ -572,7 +533,7 @@ if (!s) {
 };
 
 // ─── ATTENDANCE ───────────────────────────────────────────────────────────────
-const AttendancePage = () => {
+const AttendancePage = ({ onNav }) => {
   const present = ATTENDANCE.filter(a=>a.status==="Present").length;
   const absent = ATTENDANCE.filter(a=>a.status==="Absent").length;
   const late = ATTENDANCE.filter(a=>a.status==="Late").length;
@@ -580,7 +541,7 @@ const AttendancePage = () => {
 
   return (
     <div>
-      <SectionHeader title="Attendance" subtitle="Track daily and monthly attendance records" />
+      <SectionHeader title="Attendance" subtitle="Track daily and monthly attendance records" onBack={() => onNav("dashboard")} />
       <div style={{ display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:12, marginBottom:20 }}>
         <StatCard icon="📅" label="Total Days" value={total} accent={C.blue} />
         <StatCard icon="✅" label="Present" value={present} sub={`${Math.round(present/total*100)}%`} accent={C.green} />
@@ -643,13 +604,13 @@ const AttendancePage = () => {
 };
 
 // ─── DAILY TESTS ──────────────────────────────────────────────────────────────
-const TestsPage = () => {
+const TestsPage = ({ onNav }) => {
   const [filterSub, setFilterSub] = useState("All");
   const filtered = filterSub==="All" ? TESTS : TESTS.filter(t=>t.subject===filterSub);
 
   return (
     <div>
-      <SectionHeader title="Daily Tests" subtitle="All test results and marks across subjects" />
+      <SectionHeader title="Daily Tests" subtitle="All test results and marks across subjects" onBack={() => onNav("dashboard")} />
 
       {/* Filter */}
       <div style={{ display:"flex", gap:8, flexWrap:"wrap", marginBottom:18 }}>
@@ -709,7 +670,7 @@ const TestsPage = () => {
 };
 
 // ─── ASSIGNMENTS ──────────────────────────────────────────────────────────────
-const AssignmentsPage = () => {
+const AssignmentsPage = ({ onNav }) => {
   const [filter, setFilter] = useState("All");
   const counts = { All:ASSIGNMENTS.length, Pending:ASSIGNMENTS.filter(a=>a.status==="Pending").length,
     Submitted:ASSIGNMENTS.filter(a=>a.status==="Submitted").length, Overdue:ASSIGNMENTS.filter(a=>a.status==="Overdue").length };
@@ -717,7 +678,7 @@ const AssignmentsPage = () => {
 
   return (
     <div>
-      <SectionHeader title="Assignments" subtitle="Track all assignments across subjects" />
+      <SectionHeader title="Assignments" subtitle="Track all assignments across subjects" onBack={() => onNav("dashboard")} />
       <div style={{ display:"flex", gap:10, marginBottom:18, flexWrap:"wrap" }}>
         {["All","Pending","Submitted","Overdue"].map(f => (
           <button key={f} onClick={()=>setFilter(f)}
@@ -752,12 +713,12 @@ const AssignmentsPage = () => {
 };
 
 // ─── WEEKLY REPORTS ───────────────────────────────────────────────────────────
-const WeeklyReports = () => {
+const WeeklyReports = ({ onNav }) => {
   const [selected, setSelected] = useState(WEEKLY_REPORTS[0]);
 
   return (
     <div>
-      <SectionHeader title="Weekly Reports" subtitle="Comprehensive weekly academic summaries" />
+      <SectionHeader title="Weekly Reports" subtitle="Comprehensive weekly academic summaries" onBack={() => onNav("dashboard")} />
       <div style={{ display:"grid", gridTemplateColumns:"240px 1fr", gap:18 }}>
         <div style={{ display:"flex", flexDirection:"column", gap:10 }}>
           {WEEKLY_REPORTS.map(r => (
@@ -798,7 +759,7 @@ const WeeklyReports = () => {
 };
 
 // ─── SUBJECT PERFORMANCE ──────────────────────────────────────────────────────
-const SubjectPerformance = () => {
+const SubjectPerformance = ({ onNav }) => {
   const [activeSub, setActiveSub] = useState("Mathematics");
   const subTests = TESTS.filter(t=>t.subject===activeSub);
   const avg = subTests.length ? Math.round(subTests.reduce((a,t)=>a+t.marks/t.max*100,0)/subTests.length) : 0;
@@ -807,7 +768,7 @@ const SubjectPerformance = () => {
 
   return (
     <div>
-      <SectionHeader title="Subject Performance" subtitle="Deep-dive into each subject's progress" />
+      <SectionHeader title="Subject Performance" subtitle="Deep-dive into each subject's progress" onBack={() => onNav("dashboard")} />
       <div style={{ display:"flex", gap:8, flexWrap:"wrap", marginBottom:20 }}>
         {SUBJECTS.map(s => (
           <button key={s} onClick={()=>setActiveSub(s)}
@@ -892,9 +853,9 @@ const SubjectPerformance = () => {
 };
 
 // ─── YEARLY PROGRESS ──────────────────────────────────────────────────────────
-const YearlyProgress = () => (
+const YearlyProgress = ({ onNav }) => (
   <div>
-    <SectionHeader title="Yearly Progress" subtitle="Academic growth across the full year" />
+    <SectionHeader title="Yearly Progress" subtitle="Academic growth across the full year" onBack={() => onNav("dashboard")} />
     <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:12, marginBottom:20 }}>
       <StatCard icon="📈" label="Year Average" value="83%" sub="Strong performer" accent={C.blue} />
       <StatCard icon="🏆" label="Best Subject" value="Comp. Sci" sub="Avg 91%" accent={C.green} />
@@ -958,7 +919,7 @@ const YearlyProgress = () => (
 );
 
 // ─── TEACHER REMARKS ──────────────────────────────────────────────────────────
-const TeacherRemarks = () => {
+const TeacherRemarks = ({ onNav }) => {
   const remarks = [
     { teacher:"Ms. Priya Rajan", subject:"Class Teacher", date:"2025-06-09", type:"Achievement",
       text:"Aryan has shown remarkable improvement in class participation this month. His analytical thinking is commendable.", icon:"🏆" },
@@ -975,7 +936,7 @@ const TeacherRemarks = () => {
 
   return (
     <div>
-      <SectionHeader title="Teacher Remarks" subtitle="Feedback from Aryan's teachers" />
+      <SectionHeader title="Teacher Remarks" subtitle="Feedback from Aryan's teachers" onBack={() => onNav("dashboard")} />
       <div style={{ display:"flex", flexDirection:"column", gap:14 }}>
         {remarks.map((r,i) => {
           const [bg,fg] = typeColor[r.type] || [C.gray100,C.gray700];
@@ -1001,14 +962,14 @@ const TeacherRemarks = () => {
 };
 
 // ─── ANNOUNCEMENTS ────────────────────────────────────────────────────────────
-const AnnouncementsPage = () => {
+const AnnouncementsPage = ({ onNav }) => {
   const [ann, setAnn] = useState(ANNOUNCEMENTS);
   const markRead = (id) => setAnn(a=>a.map(n=>n.id===id?{...n,read:true}:n));
   const catColor = { Exam:[C.redLight,C.red], Event:[C.blueLight,C.blue], Academic:[C.purpleLight,C.purple] };
 
   return (
     <div>
-      <SectionHeader title="Announcements" subtitle="School notices and important communications" />
+      <SectionHeader title="Announcements" subtitle="School notices and important communications" onBack={() => onNav("dashboard")} />
       <div style={{ display:"flex", flexDirection:"column", gap:12 }}>
         {ann.map(a => {
           const [bg,fg] = catColor[a.category] || [C.gray100,C.gray700];
@@ -1050,15 +1011,15 @@ export default function App() {
 
   const pageMap = {
     dashboard: <Dashboard onNav={setPage} />,
-    profile: <StudentProfile />,
-    attendance: <AttendancePage />,
-    tests: <TestsPage />,
-    assignments: <AssignmentsPage />,
-    weekly: <WeeklyReports />,
-    subjects: <SubjectPerformance />,
-    yearly: <YearlyProgress />,
-    remarks: <TeacherRemarks />,
-    announcements: <AnnouncementsPage />,
+    profile: <StudentProfile onNav={setPage} />,
+    attendance: <AttendancePage onNav={setPage} />,
+    tests: <TestsPage onNav={setPage} />,
+    assignments: <AssignmentsPage onNav={setPage} />,
+    weekly: <WeeklyReports onNav={setPage} />,
+    subjects: <SubjectPerformance onNav={setPage} />,
+    yearly: <YearlyProgress onNav={setPage} />,
+    remarks: <TeacherRemarks onNav={setPage} />,
+    announcements: <AnnouncementsPage onNav={setPage} />,
   };
 
   return (
