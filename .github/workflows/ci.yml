@@ -28,7 +28,11 @@ jobs:
       run: npm ci
 
     - name: Run Jest Unit Tests
-      run: npm run test:unit
+      run: npm run test:unit -- --json --outputFile=jest-results.json
+      
+    - name: Generate Jest Excel Report
+      if: always()
+      run: node tests/utils/generateJestExcel.cjs
 
     - name: Wait for Vite dev server
       run: |
@@ -47,9 +51,11 @@ jobs:
       env:
         CI: true
 
-    - name: Upload Test Report Artifact
+    - name: Upload Test Report Artifacts
       if: always()
       uses: actions/upload-artifact@v4
       with:
-        name: Automation_Execution_Report
-        path: Automation_Execution_Report.xlsx
+        name: Testing_Execution_Reports
+        path: |
+          Automation_Execution_Report.xlsx
+          Jest_Test_Report.xlsx
