@@ -1,0 +1,42 @@
+name: Unit Testing Pipeline
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  unit-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    - name: Install Dependencies
+      run: npm ci
+
+    - name: Run Jest Unit Tests
+      run: npx jest tests/unit/ --json --outputFile=jest-results.json
+      
+    - name: Generate Jest Excel Report
+      if: always()
+      run: node tests/utils/generateJestExcel.cjs
+
+    - name: Upload Unit Test Report Artifact
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: Unit_Test_Execution_Report
+        path: Jest_Test_Report.xlsx

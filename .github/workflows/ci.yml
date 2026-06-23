@@ -27,12 +27,6 @@ jobs:
     - name: Install Dependencies
       run: npm ci
 
-    - name: Run Jest Unit Tests
-      run: npx jest tests/unit/ --json --outputFile=jest-results.json
-      
-    - name: Generate Jest Excel Report
-      if: always()
-      run: node tests/utils/generateJestExcel.cjs
 
     - name: Wait for Vite dev server
       run: |
@@ -58,4 +52,3 @@ jobs:
         name: Testing_Execution_Reports
         path: |
           Automation_Execution_Report.xlsx
-          Jest_Test_Report.xlsx
