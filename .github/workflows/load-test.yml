@@ -1,0 +1,42 @@
+name: Load Testing Pipeline
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  load-test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+
+    - name: Install Dependencies
+      run: npm ci
+
+    - name: Run Load Tests
+      run: npx jest tests/load/Load.test.js --json --outputFile=load-results.json
+      
+    - name: Generate Load Excel Report
+      if: always()
+      run: node tests/utils/generateLoadExcel.cjs
+
+    - name: Upload Load Test Report Artifact
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: Load_Test_Execution_Report
+        path: Load_Test_Report.xlsx

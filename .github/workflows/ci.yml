@@ -28,7 +28,7 @@ jobs:
       run: npm ci
 
     - name: Run Jest Unit Tests
-      run: npm run test:unit -- --json --outputFile=jest-results.json
+      run: npx jest tests/unit/ --json --outputFile=jest-results.json
       
     - name: Generate Jest Excel Report
       if: always()
