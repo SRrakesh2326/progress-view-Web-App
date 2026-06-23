@@ -42,35 +42,35 @@ def generate_load_testing_report():
             "metrics": ["Time to First Byte (TTFB)", "First Contentful Paint (FCP)", "Time to Interactive (TTI)", "Largest Contentful Paint (LCP)", "DOM Content Loaded Time", "Total Blocking Time", "Cumulative Layout Shift"],
             "unit": "ms",
             "threshold": 2500,
-            "count": 30
+            "count": 72
         },
         {
             "name": "React Component Render Performance",
             "metrics": ["App Root Render Time", "Dashboard Component Mount Time", "Profile Component Update Time", "Virtual DOM Reconciliation Time", "List Rendering (100 items) Time", "State Update Latency"],
             "unit": "ms",
             "threshold": 16, 
-            "count": 30
+            "count": 72
         },
         {
             "name": "API Endpoint Latency & Fetch Performance",
             "metrics": ["Authentication API Latency", "User Profile Fetch Latency", "Patient Data Query Latency", "GraphQL Query Resolution Time", "File Upload Latency", "Batch Request Processing Time"],
             "unit": "ms",
             "threshold": 1500,
-            "count": 30
+            "count": 72
         },
         {
             "name": "Client-Side Caching & Local Storage",
             "metrics": ["IndexedDB Read Time", "IndexedDB Write Time", "LocalStorage Read Access Latency", "Redux Store Hydration Time", "Cache Miss Penalty"],
             "unit": "ms",
             "threshold": 300,
-            "count": 30
+            "count": 72
         },
         {
             "name": "Memory & Resource Usage",
             "metrics": ["JS Heap Size", "DOM Nodes Count (Max)", "Event Listener Memory Leak Check", "Image Asset Load Memory", "Web Worker Message Latency"],
             "unit": "MB",
             "threshold": 50,
-            "count": 30
+            "count": 72
         }
     ]
 
