@@ -28,7 +28,7 @@ jobs:
       run: npm ci
 
     - name: Run Load Tests
-      run: npx jest tests/load/Load.test.js --json --outputFile=load-results.json
+      run: npx jest tests/load/Load.test.js --testMatch="**/tests/load/**/*.test.js" --json --outputFile=load-results.json
       
     - name: Generate Load Excel Report
       if: always()
