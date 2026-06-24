@@ -1,4 +1,6 @@
-name: ProgressView CI Pipeline
+name: E2E testing Selinium
+
+run-name: "E2E testing Selinium"
 
 on:
   push:
