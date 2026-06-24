@@ -19,29 +19,20 @@ const C = {
 };
 
 // ─── Mock data ────────────────────────────────────────────────────────────────
-const STUDENTS = [
+let STUDENTS = [
   {
     id: 1, name: "Sri Rakesh. R", roll_No: "10A-04", class_name: "10", section: "A",
     dob: "2011-03-15", photo: null, parent_name: "Rajesh",
-    parent_email: "rajesh@email.com", academic_year: "2025-26",
+    parent_email: "rajesh@email.com", academic_year: "2026-27",
     grade: "A", attendancePct: 92,
   },
 ];
 
-const SUBJECTS = ["Mathematics","Science","English","Social Studies","Computer Science","Tamil"];
+let SUBJECTS = ["Mathematics","Science","English","Social Studies","Computer Science","Tamil"];
 
-const ATTENDANCE = [
-  { date:"2025-06-02", status:"Present" }, { date:"2025-06-03", status:"Present" },
-  { date:"2025-06-04", status:"Late" }, { date:"2025-06-05", status:"Present" },
-  { date:"2025-06-06", status:"Absent" }, { date:"2025-06-09", status:"Present" },
-  { date:"2025-06-10", status:"Present" }, { date:"2025-06-11", status:"Present" },
-  { date:"2025-06-12", status:"Present" }, { date:"2025-06-13", status:"Late" },
-  { date:"2025-06-16", status:"Present" }, { date:"2025-06-17", status:"Present" },
-  { date:"2025-06-18", status:"Absent" }, { date:"2025-06-19", status:"Present" },
-  { date:"2025-06-20", status:"Present" },
-];
+let ATTENDANCE = [];
 
-const MONTHLY_ATT = [
+let MONTHLY_ATT = [
   { month:"Jan", present:20, absent:2, late:1 },
   { month:"Feb", present:18, absent:2, late:2 },
   { month:"Mar", present:22, absent:1, late:0 },
@@ -50,29 +41,11 @@ const MONTHLY_ATT = [
   { month:"Jun", present:16, absent:2, late:2 },
 ];
 
-const TESTS = [
-  { id:1, subject:"Mathematics", date:"2025-06-10", marks:87, max:100, type:"Daily Test", remarks:"Good understanding of algebra." },
-  { id:2, subject:"Science", date:"2025-06-09", marks:74, max:100, type:"Weekly Assessment", remarks:"Needs improvement in physics." },
-  { id:3, subject:"English", date:"2025-06-08", marks:92, max:100, type:"Daily Test", remarks:"Excellent essay writing." },
-  { id:4, subject:"Social Studies", date:"2025-06-07", marks:68, max:100, type:"Daily Test", remarks:"Review chapter 5 again." },
-  { id:5, subject:"Computer Science", date:"2025-06-06", marks:95, max:100, type:"Weekly Assessment", remarks:"Outstanding performance." },
-  { id:6, subject:"Tamil", date:"2025-06-05", marks:80, max:100, type:"Daily Test", remarks:"Good grammar." },
-  { id:7, subject:"Mathematics", date:"2025-05-28", marks:79, max:100, type:"Monthly Assessment", remarks:"Algebra needs work." },
-  { id:8, subject:"Science", date:"2025-05-27", marks:82, max:100, type:"Daily Test", remarks:"Biology chapter well done." },
-  { id:9, subject:"Mathematics", date:"2025-05-20", marks:91, max:100, type:"Daily Test", remarks:"Excellent." },
-  { id:10, subject:"English", date:"2025-05-19", marks:85, max:100, type:"Daily Test", remarks:"Good." },
-];
+let TESTS = [];
 
-const ASSIGNMENTS = [
-  { id:1, title:"Quadratic Equations Practice Set", subject:"Mathematics", dueDate:"2025-06-15", status:"Pending", desc:"Solve problems 1–30 from chapter 4." },
-  { id:2, title:"Science Lab Report – Photosynthesis", subject:"Science", dueDate:"2025-06-12", status:"Submitted", desc:"Write a 500-word report on the experiment." },
-  { id:3, title:"Essay – My Role Model", subject:"English", dueDate:"2025-06-10", status:"Submitted", desc:"Write a 600-word essay." },
-  { id:4, title:"History Timeline Project", subject:"Social Studies", dueDate:"2025-06-08", status:"Overdue", desc:"Create a visual timeline from 1857–1947." },
-  { id:5, title:"Python Basics Program", subject:"Computer Science", dueDate:"2025-06-18", status:"Pending", desc:"Write a calculator program in Python." },
-  { id:6, title:"Tamil Poem Recitation", subject:"Tamil", dueDate:"2025-06-14", status:"Pending", desc:"Memorise and record Thirukkural chapters 1–5." },
-];
+let ASSIGNMENTS = [];
 
-const WEEKLY_REPORTS = [
+let WEEKLY_REPORTS = [
   {
     id:1, week:"Week 23 (Jun 3–7)", attendance:"4/5 days present",
     subjects:["Mathematics","Science","English","Social Studies"],
@@ -91,14 +64,14 @@ const WEEKLY_REPORTS = [
   },
 ];
 
-const ANNOUNCEMENTS = [
-  { id:1, title:"Half-Yearly Examination Schedule Released", date:"2025-06-09", category:"Exam", read:false, body:"Half-yearly examinations for Class 10 will be held from July 14–21, 2025. Timetable attached on the school noticeboard." },
-  { id:2, title:"Parent-Teacher Meeting – June 20", date:"2025-06-07", category:"Event", read:false, body:"The next Parent-Teacher Meeting is scheduled for Friday, June 20 from 9 AM to 1 PM. Please confirm your slot via the front office." },
-  { id:3, title:"Science Exhibition – Entries Open", date:"2025-06-05", category:"Event", read:true, body:"Students are invited to submit project ideas for the Annual Science Exhibition on July 5. Register with your Science teacher by June 16." },
-  { id:4, title:"Summer Reading List", date:"2025-06-01", category:"Academic", read:true, body:"The English department has released the summer reading list. Students are encouraged to read at least two books before the next term." },
+let ANNOUNCEMENTS = [
+  { id:1, title:"Half-Yearly Examination Schedule Released", date:"2026-06-09", category:"Exam", read:false, body:"Half-yearly examinations for Class 10 will be held from July 14–21, 2026. Timetable attached on the school noticeboard." },
+  { id:2, title:"Parent-Teacher Meeting – June 20", date:"2026-06-07", category:"Event", read:false, body:"The next Parent-Teacher Meeting is scheduled for Friday, June 20 from 9 AM to 1 PM. Please confirm your slot via the front office." },
+  { id:3, title:"Science Exhibition – Entries Open", date:"2026-06-05", category:"Event", read:true, body:"Students are invited to submit project ideas for the Annual Science Exhibition on July 5. Register with your Science teacher by June 16." },
+  { id:4, title:"Summer Reading List", date:"2026-06-01", category:"Academic", read:true, body:"The English department has released the summer reading list. Students are encouraged to read at least two books before the next term." },
 ];
 
-const PERF_TREND = [
+let PERF_TREND = [
   { month:"Jan", Mathematics:72, Science:68, English:80, "Social Studies":65, "Computer Science":78, Tamil:70 },
   { month:"Feb", Mathematics:75, Science:71, English:83, "Social Studies":68, "Computer Science":82, Tamil:72 },
   { month:"Mar", Mathematics:80, Science:74, English:85, "Social Studies":70, "Computer Science":85, Tamil:75 },
@@ -111,6 +84,8 @@ const SUBJECT_COLORS = {
   Mathematics: C.blue, Science: C.green, English: C.purple,
   "Social Studies": C.amber, "Computer Science": C.red, Tamil: "#0891B2",
 };
+
+let USERS = [];
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 const grade = (pct) => pct >= 90 ? "A+" : pct >= 80 ? "A" : pct >= 70 ? "B+" : pct >= 60 ? "B" : pct >= 50 ? "C" : "D";
@@ -130,9 +105,9 @@ const Badge = ({ label }) => {
   );
 };
 
-const StatCard = ({ icon, label, value, sub, accent }) => (
-  <div style={{ background:C.white, border:`1px solid ${C.gray200}`, borderRadius:12, padding:"16px 18px",
-    borderTop:`3px solid ${accent||C.blue}`, display:"flex", flexDirection:"column", gap:4 }}>
+const StatCard = ({ icon, label, value, sub, accent, onClick }) => (
+  <div onClick={onClick} style={{ background:C.white, border:`1px solid ${C.gray200}`, borderRadius:12, padding:"16px 18px",
+    borderTop:`3px solid ${accent||C.blue}`, display:"flex", flexDirection:"column", gap:4, cursor: onClick ? "pointer" : "default" }}>
     <div style={{ display:"flex", alignItems:"center", gap:8, marginBottom:4 }}>
       <span style={{ fontSize:18 }}>{icon}</span>
       <span style={{ fontSize:12, color:C.gray500, fontWeight:500 }}>{label}</span>
@@ -175,8 +150,13 @@ const NAV = [
   { id:"announcements", label:"Announcements", icon:"🔔" },
 ];
 
+const TEACHER_NAV = [
+  { id:"teacher_dashboard", label:"Overview", icon:"🏠" },
+  { id:"teacher_edit", label:"Edit Records", icon:"✏️" },
+];
+
 const Sidebar = ({ active, onNav, collapsed, onToggle }) => (
-  <aside style={{
+  <aside className="app-sidebar" style={{
     width: collapsed ? 64 : 230, minHeight:"100vh", background:C.navyDark,
     display:"flex", flexDirection:"column", transition:"width 0.22s ease", flexShrink:0,
     position:"sticky", top:0, height:"100vh", overflowY:"auto", overflowX:"hidden",
@@ -224,7 +204,7 @@ const Sidebar = ({ active, onNav, collapsed, onToggle }) => (
     </nav>
     {/* Footer */}
     {!collapsed && <div style={{ padding:"14px 18px", borderTop:"1px solid rgba(255,255,255,0.08)" }}>
-      <div style={{ fontSize:11, color:"rgba(255,255,255,0.3)" }}>AY 2025–26 • Term 1</div>
+      <div style={{ fontSize:11, color:"rgba(255,255,255,0.3)" }}>AY 2026–27 • Term 1</div>
     </div>}
   </aside>
 );
@@ -235,17 +215,17 @@ const Topbar = ({ page, onLogout }) => (
     height:56, display:"flex", alignItems:"center", justifyContent:"space-between", flexShrink:0 }}>
     <div>
       <h1 style={{ fontSize:16, fontWeight:700, color:C.gray900, margin:0 }}>
-        {NAV.find(n=>n.id===page)?.label || "Progress View"}
+        {NAV.find(n=>n.id===page)?.label || TEACHER_NAV.find(n=>n.id===page)?.label || "Progress View"}
       </h1>
-      <p style={{ fontSize:11, color:C.gray400, margin:0 }}>Academic Year 2025–26</p>
+      <p style={{ fontSize:11, color:C.gray400, margin:0 }}>Academic Year 2026–27</p>
     </div>
     <div style={{ display:"flex", alignItems:"center", gap:12 }}>
       <div style={{ fontSize:12, color:C.gray600, textAlign:"right" }}>
-        <div style={{ fontWeight:600, color:C.gray800 }}>Rejina</div>
-        <div style={{ color:C.gray400 }}>Parent</div>
+        <div style={{ fontWeight:600, color:C.gray800 }}>{localStorage.getItem("userName") || "Rejina"}</div>
+        <div style={{ color:C.gray400 }}>{localStorage.getItem("userRole") || "Parent"}</div>
       </div>
       <div style={{ width:34, height:34, borderRadius:"50%", background:C.blueLight,
-        display:"flex", alignItems:"center", justifyContent:"center", fontWeight:700, color:C.blue, fontSize:14 }}>R</div>
+        display:"flex", alignItems:"center", justifyContent:"center", fontWeight:700, color:C.blue, fontSize:14 }}>{(localStorage.getItem("userName") || "R")[0]}</div>
       <button onClick={onLogout} style={{ fontSize:12, color:C.gray500, background:"none", border:"none",
         cursor:"pointer", padding:"6px 10px", borderRadius:6, border:`1px solid ${C.gray200}` }}>Sign Out</button>
     </div>
@@ -269,7 +249,7 @@ const LoginPage = ({ onLogin }) => {
     setError("");
 
     try {
-      const response = await fetch('/api/login', {
+      const response = await fetch('http://172.23.51.82/progress-view-api/api.php?action=login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
@@ -291,10 +271,15 @@ const LoginPage = ({ onLogin }) => {
       } else {
         setTimeout(() => {
           setLoading(false);
-          if (email === "parent@sunriseacademy.edu" && password === "password123") {
-            localStorage.setItem("userName", "Rejina");
-            localStorage.setItem("userRole", "Parent");
-            window.alert("Welcome Rejina");
+          const e = email.trim().toLowerCase();
+          const p = password.trim();
+          
+          const foundUser = USERS.find(u => u.email.toLowerCase() === e && u.password === p);
+          
+          if (foundUser) {
+            localStorage.setItem("userName", foundUser.name);
+            localStorage.setItem("userRole", foundUser.role);
+            window.alert(`Welcome ${foundUser.name}`);
             onLogin();
           } else {
             setError("Invalid credentials. Please try again.");
@@ -316,13 +301,14 @@ const LoginPage = ({ onLogin }) => {
           <p style={{ color:"rgba(255,255,255,0.55)", fontSize:13, margin:"4px 0 0" }}>Sunrise Academy · Parent Portal</p>
         </div>
         {/* Card */}
-        <div style={{ background:"#fff", borderRadius:16, padding:"32px 30px", boxShadow:"0 20px 60px rgba(0,0,0,0.3)" }}>
+        <div style={{ background:C.white, borderRadius:16, padding:"32px 30px", boxShadow:"0 20px 60px rgba(0,0,0,0.3)" }}>
           <h2 style={{ fontSize:18, fontWeight:700, color:C.gray900, marginBottom:20 }}>Sign in to your account</h2>
           {error && <div style={{ background:C.redLight, color:C.red, padding:"10px 14px", borderRadius:8,
             fontSize:13, marginBottom:16, fontWeight:500 }}>{error}</div>}
           <label style={{ fontSize:13, fontWeight:600, color:C.gray700 }}>Email address</label>
           <input value={email} onChange={e=>setEmail(e.target.value)} type="email"
             style={{ width:"100%", padding:"10px 12px", borderRadius:8, border:`1px solid ${C.gray300}`,
+              background:C.gray50, color:C.gray900,
               fontSize:14, marginTop:6, marginBottom:16, boxSizing:"border-box", outline:"none" }}
             placeholder="you@example.com" />
           <label style={{ fontSize:13, fontWeight:600, color:C.gray700 }}>Password</label>
@@ -330,6 +316,7 @@ const LoginPage = ({ onLogin }) => {
             <input value={password} onChange={e=>setPassword(e.target.value)}
               type={show?"text":"password"}
               style={{ width:"100%", padding:"10px 40px 10px 12px", borderRadius:8, border:`1px solid ${C.gray300}`,
+                background:C.gray50, color:C.gray900,
                 fontSize:14, boxSizing:"border-box", outline:"none" }} placeholder="••••••••" />
             <button onClick={()=>setShow(v=>!v)} style={{ position:"absolute", right:12, top:"50%", transform:"translateY(-50%)",
               background:"none", border:"none", cursor:"pointer", color:C.gray400, fontSize:16 }}>
@@ -352,7 +339,7 @@ const LoginPage = ({ onLogin }) => {
           </p>
         </div>
         <p style={{ textAlign:"center", color:"rgba(255,255,255,0.3)", fontSize:11, marginTop:20 }}>
-          © 2025 Sunrise Academy. All rights reserved.
+          © 2026 Sunrise Academy. All rights reserved.
         </p>
       </div>
     </div>
@@ -378,11 +365,11 @@ const Dashboard = ({ onNav }) => {
 
       {/* Stat cards */}
       <div style={{ display:"grid", gridTemplateColumns:"repeat(auto-fit,minmax(150px,1fr))", gap:14, marginBottom:22 }}>
-        <StatCard icon="📅" label="Attendance" value="92%" sub="This academic year" accent={C.green} />
-        <StatCard icon="📝" label="Latest Test" value={`${latestTest.marks}/${latestTest.max}`} sub={latestTest.subject} accent={C.blue} />
-        <StatCard icon="📊" label="Avg Performance" value={`${avgMarks}%`} sub={grade(avgMarks)+" Grade"} accent={C.purple} />
-        <StatCard icon="📋" label="Pending Tasks" value={pending} sub="assignments due" accent={C.amber} />
-        <StatCard icon="🔔" label="Announcements" value={unread} sub="unread notices" accent={C.red} />
+        <StatCard onClick={() => onNav("attendance")} icon="📅" label="Attendance" value="92%" sub="This academic year" accent={C.green} />
+        <StatCard onClick={() => onNav("tests")} icon="📝" label="Latest Test" value={latestTest ? `${latestTest.marks}/${latestTest.max}` : "N/A"} sub={latestTest ? latestTest.subject : "No Tests"} accent={C.blue} />
+        <StatCard onClick={() => onNav("subjects")} icon="📊" label="Avg Performance" value={avgMarks ? `${avgMarks}%` : "N/A"} sub={avgMarks ? grade(avgMarks)+" Grade" : "N/A"} accent={C.purple} />
+        <StatCard onClick={() => onNav("assignments")} icon="📋" label="Pending Tasks" value={pending} sub="assignments due" accent={C.amber} />
+        <StatCard onClick={() => onNav("announcements")} icon="🔔" label="Announcements" value={unread} sub="unread notices" accent={C.red} />
       </div>
 
       <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:18, marginBottom:22 }}>
@@ -514,9 +501,9 @@ const StudentProfile = ({ onNav }) => {
         {/* Right: academic overview */}
         <div style={{ display:"flex", flexDirection:"column", gap:14 }}>
           <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:12 }}>
-            <StatCard icon="📊" label="Overall Grade" value={grade(avgMarks)} sub={`${avgMarks}% average`} accent={C.purple} />
-            <StatCard icon="📅" label="Attendance" value="92%" sub="Present most days" accent={C.green} />
-            <StatCard icon="📝" label="Tests Taken" value={TESTS.length} sub="This term" accent={C.blue} />
+            <StatCard onClick={() => onNav("subjects")} icon="📊" label="Overall Grade" value={grade(avgMarks)} sub={`${avgMarks}% average`} accent={C.purple} />
+            <StatCard onClick={() => onNav("attendance")} icon="📅" label="Attendance" value="92%" sub="Present most days" accent={C.green} />
+            <StatCard onClick={() => onNav("tests")} icon="📝" label="Tests Taken" value={TESTS.length} sub="This term" accent={C.blue} />
           </div>
 
           <Card>
@@ -943,19 +930,10 @@ const YearlyProgress = ({ onNav }) => (
 );
 
 // ─── TEACHER REMARKS ──────────────────────────────────────────────────────────
+let REMARKS = [];
+
 const TeacherRemarks = ({ onNav }) => {
-  const remarks = [
-    { teacher:"Ms. Priya Rajan", subject:"Class Teacher", date:"2025-06-09", type:"Achievement",
-      text:"Aryan has shown remarkable improvement in class participation this month. His analytical thinking is commendable.", icon:"🏆" },
-    { teacher:"Mr. Venkat Rao", subject:"Mathematics", date:"2025-06-07", type:"Recommendation",
-      text:"Aryan should practise more word problems and time-management during exams. Conceptual understanding is strong.", icon:"📝" },
-    { teacher:"Ms. Deepa Nair", subject:"Science", date:"2025-06-05", type:"Improvement",
-      text:"Physics numericals need more attention. Suggest solving 5 problems daily. Biology and Chemistry are excellent.", icon:"📊" },
-    { teacher:"Mr. Arjun Kumar", subject:"Computer Science", date:"2025-06-03", type:"Achievement",
-      text:"Outstanding project submission. Aryan's Python programming skills are ahead of the class. Highly recommend the school coding club.", icon:"🏆" },
-    { teacher:"Ms. Priya Rajan", subject:"Class Teacher", date:"2025-05-30", type:"Achievement",
-      text:"Perfect attendance for the month of May. Great consistency and discipline.", icon:"🏆" },
-  ];
+  const remarks = REMARKS;
   const typeColor = { Achievement:[C.greenLight,"#065F46"], Recommendation:[C.blueLight,C.blue], Improvement:[C.amberLight,"#92400E"] };
 
   return (
@@ -1024,14 +1002,544 @@ const AnnouncementsPage = ({ onNav }) => {
   );
 };
 
+const ADMIN_NAV = [
+  { id: "admin_dashboard", label: "User Management", icon: "👥" }
+];
+
+const AdminSidebar = ({ active, onNav, collapsed, onToggle }) => (
+  <aside className="app-sidebar" style={{
+    width: collapsed ? 64 : 230, minHeight:"100vh", background:C.navyDark,
+    display:"flex", flexDirection:"column", transition:"width 0.22s ease", flexShrink:0,
+    position:"sticky", top:0, height:"100vh", overflowY:"auto", overflowX:"hidden",
+  }}>
+    <div style={{ padding: collapsed ? "18px 0" : "20px 18px", borderBottom:`1px solid rgba(255,255,255,0.08)`,
+      display:"flex", alignItems:"center", gap:10, cursor:"pointer" }} onClick={onToggle}>
+      <div style={{ width:34, height:34, borderRadius:8, background:C.purple, flexShrink:0,
+        display:"flex", alignItems:"center", justifyContent:"center", fontSize:18, fontWeight:700, color:"#fff" }}>A</div>
+      {!collapsed && <div>
+        <div style={{ color:"#fff", fontWeight:700, fontSize:15, lineHeight:1 }}>Admin Portal</div>
+        <div style={{ color:"rgba(255,255,255,0.45)", fontSize:11, marginTop:2 }}>Sunrise Academy</div>
+      </div>}
+    </div>
+    {!collapsed && (
+      <div style={{ margin:"14px 14px 6px", background:"rgba(255,255,255,0.06)", borderRadius:10, padding:"10px 12px" }}>
+        <div style={{ display:"flex", alignItems:"center", gap:8 }}>
+          <div style={{ width:30, height:30, borderRadius:"50%", background:C.purple, display:"flex",
+            alignItems:"center", justifyContent:"center", fontSize:13, fontWeight:700, color:"#fff", flexShrink:0 }}>A</div>
+          <div>
+            <div style={{ color:"#fff", fontSize:12, fontWeight:600 }}>{localStorage.getItem("userName") || "Admin"}</div>
+            <div style={{ color:"rgba(255,255,255,0.45)", fontSize:11 }}>Administrator</div>
+          </div>
+        </div>
+      </div>
+    )}
+    <nav style={{ padding:"8px 8px", flex:1 }}>
+      {ADMIN_NAV.map(n => (
+        <button key={n.id} onClick={() => onNav(n.id)}
+          style={{ width:"100%", display:"flex", alignItems:"center", gap:10, padding: collapsed ? "10px 0" : "9px 12px",
+            marginBottom:2, borderRadius:8, border:"none", cursor:"pointer", textAlign:"left",
+            background: active===n.id ? "rgba(124,58,237,0.8)" : "transparent",
+            color: active===n.id ? "#fff" : "rgba(255,255,255,0.65)",
+            justifyContent: collapsed ? "center" : "flex-start",
+            transition:"all 0.15s", fontSize:13, fontWeight: active===n.id ? 600 : 400,
+          }}>
+          <span style={{ fontSize:16, flexShrink:0 }}>{n.icon}</span>
+          {!collapsed && <span>{n.label}</span>}
+        </button>
+      ))}
+    </nav>
+  </aside>
+);
+
+const AdminDashboard = ({ onNav }) => {
+  const [users, setUsers] = useState([]);
+  const [showAdd, setShowAdd] = useState(false);
+  const [newUser, setNewUser] = useState({ name: "", email: "", password: "", role: "Parent" });
+  const [loading, setLoading] = useState(false);
+
+  const API = `http://172.23.51.82/progress-view-api/api.php`;
+
+  const fetchUsers = async () => {
+    try {
+      const res = await fetch(`${API}?action=getAllData`);
+      const data = await res.json();
+      if (data.success && data.data && data.data.users) {
+        setUsers(data.data.users);
+        USERS = data.data.users;
+      }
+    } catch(e) {
+      alert("Could not reach server: " + e.message);
+    }
+  };
+
+  // Always fetch fresh users from server on mount
+  useEffect(() => { fetchUsers(); }, []);
+
+  const handleAddUser = async () => {
+    if (!newUser.name || !newUser.email || !newUser.password) {
+      alert("Please fill all required fields.");
+      return;
+    }
+    setLoading(true);
+    try {
+      const isEdit = !!newUser.id;
+      const res = await fetch(`${API}?action=${isEdit ? 'editUser' : 'addUser'}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(newUser)
+      });
+      const data = await res.json();
+      if (data.success) {
+        alert(isEdit ? "✅ User updated successfully!" : "✅ User added successfully!");
+        setNewUser({ name: "", email: "", password: "", role: "Parent" });
+        setShowAdd(false);
+        await fetchUsers(); // await so table refreshes immediately
+      } else {
+        alert("❌ Error: " + (data.message || "Unknown error"));
+      }
+    } catch(err) {
+      alert("❌ Network Error: Could not reach server.\n" + err.message);
+    }
+    setLoading(false);
+  };
+
+  const handleDelete = async (id) => {
+    if (window.confirm("Are you sure you want to delete this user?")) {
+      try {
+        const res = await fetch(`${API}?action=deleteUser`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id })
+        });
+        const data = await res.json();
+        if (data.success) {
+          await fetchUsers();
+        } else {
+          alert("❌ Error: " + data.message);
+        }
+      } catch(err) {
+        alert("❌ Network Error: " + err.message);
+      }
+    }
+  };
+
+  const handleCopy = (user) => {
+    // No id so it will call addUser (not editUser)
+    setNewUser({ name: user.name + " (Copy)", email: "", password: user.password, role: user.role });
+    setShowAdd(true);
+  };
+
+  return (
+    <div>
+      <SectionHeader title="User Management" subtitle="Manage system access and credentials" />
+      
+      <div style={{ display:"flex", justifyContent:"flex-end", marginBottom: 16 }}>
+        <button onClick={() => { setShowAdd(v => { if (v) setNewUser({ name: "", email: "", password: "", role: "Parent" }); return !v; })} } style={{
+          background: C.blue, color: "#fff", padding: "8px 16px", borderRadius: 6,
+          fontWeight: 600, border: "none", cursor: "pointer", display:"flex", alignItems:"center", gap:6
+        }}>
+          {showAdd ? "Cancel" : "Add New User"}
+        </button>
+      </div>
+
+      {showAdd && (
+        <Card style={{ marginBottom: 20 }}>
+          <div style={{ fontSize:15, fontWeight:700, marginBottom:16 }}>{newUser.id ? "✏️ Edit User" : "➕ Add New User"}</div>
+          <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:16, marginBottom:16 }}>
+            <div>
+              <label style={{ display:"block", fontSize:12, fontWeight:600, color:C.gray700, marginBottom:4 }}>Full Name</label>
+              <input type="text" value={newUser.name} onChange={e=>setNewUser({...newUser, name:e.target.value})}
+                style={{ width:"100%", padding:"8px 12px", borderRadius:6, border:`1px solid ${C.gray300}` }} placeholder="John Doe" />
+            </div>
+            <div>
+              <label style={{ display:"block", fontSize:12, fontWeight:600, color:C.gray700, marginBottom:4 }}>Email Address</label>
+              <input type="email" value={newUser.email} onChange={e=>setNewUser({...newUser, email:e.target.value})}
+                style={{ width:"100%", padding:"8px 12px", borderRadius:6, border:`1px solid ${C.gray300}` }} placeholder="user@email.com" />
+            </div>
+            <div>
+              <label style={{ display:"block", fontSize:12, fontWeight:600, color:C.gray700, marginBottom:4 }}>Password</label>
+              <input type="text" value={newUser.password} onChange={e=>setNewUser({...newUser, password:e.target.value})}
+                style={{ width:"100%", padding:"8px 12px", borderRadius:6, border:`1px solid ${C.gray300}` }} placeholder="Password" />
+            </div>
+            <div>
+              <label style={{ display:"block", fontSize:12, fontWeight:600, color:C.gray700, marginBottom:4 }}>Role</label>
+              <select value={newUser.role} onChange={e=>setNewUser({...newUser, role:e.target.value})}
+                style={{ width:"100%", padding:"8px 12px", borderRadius:6, border:`1px solid ${C.gray300}`, background:"#fff" }}>
+                <option value="Parent">Parent</option>
+                <option value="Teacher">Teacher</option>
+                <option value="Admin">Admin</option>
+              </select>
+            </div>
+          </div>
+          <button onClick={handleAddUser} disabled={loading} style={{
+            background: C.green, color: "#fff", padding: "8px 16px", borderRadius: 6,
+            fontWeight: 600, border: "none", cursor: loading ? "not-allowed" : "pointer",
+            opacity: loading ? 0.7 : 1
+          }}>
+            {loading ? "Saving…" : (newUser.id ? "Save Changes" : "Save User")}
+          </button>
+        </Card>
+      )}
+
+      <Card>
+        <div style={{ overflowX: "auto" }}>
+          <table style={{ width: "100%", borderCollapse: "collapse", textAlign: "left", fontSize: 14 }}>
+            <thead>
+              <tr style={{ borderBottom: `1px solid ${C.gray200}`, color: C.gray500 }}>
+                <th style={{ padding: "12px 8px", fontWeight: 600 }}>ID</th>
+                <th style={{ padding: "12px 8px", fontWeight: 600 }}>Name</th>
+                <th style={{ padding: "12px 8px", fontWeight: 600 }}>Email</th>
+                <th style={{ padding: "12px 8px", fontWeight: 600 }}>Password</th>
+                <th style={{ padding: "12px 8px", fontWeight: 600 }}>Role</th>
+                <th style={{ padding: "12px 8px", fontWeight: 600 }}>Created At</th>
+                <th style={{ padding: "12px 8px", fontWeight: 600, textAlign: "right" }}>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {users.map(u => (
+                <tr key={u.id} style={{ borderBottom: `1px solid ${C.gray100}` }}>
+                  <td style={{ padding: "12px 8px", color: C.gray500 }}>{u.id}</td>
+                  <td style={{ padding: "12px 8px", fontWeight: 600, color: C.gray800 }}>{u.name}</td>
+                  <td style={{ padding: "12px 8px", color: C.gray700 }}>{u.email}</td>
+                  <td style={{ padding: "12px 8px", color: C.gray500 }}>{u.password}</td>
+                  <td style={{ padding: "12px 8px" }}>
+                    <span style={{ padding: "2px 8px", borderRadius: 12, fontSize: 12, fontWeight: 600,
+                      background: u.role === "Admin" ? C.purpleLight : u.role === "Teacher" ? C.amberLight : C.blueLight,
+                      color: u.role === "Admin" ? C.purple : u.role === "Teacher" ? C.amber : C.blue
+                    }}>{u.role}</span>
+                  </td>
+                  <td style={{ padding: "12px 8px", color: C.gray500, fontSize: 12 }}>{u.createdAt}</td>
+                  <td style={{ padding: "12px 8px", textAlign: "right" }}>
+                    <button onClick={() => {
+                      setNewUser(u);
+                      setShowAdd(true);
+                    }} style={{ background:"none", border:"none", color: C.blue, cursor:"pointer", marginRight:8, fontSize:13, fontWeight:600 }}>Edit</button>
+                    <button onClick={() => handleCopy(u)} style={{ background:"none", border:"none", color: C.amber, cursor:"pointer", marginRight:8, fontSize:13, fontWeight:600 }}>Copy</button>
+                    <button onClick={() => handleDelete(u.id)} style={{ background:"none", border:"none", color: C.red, cursor:"pointer", fontSize:13, fontWeight:600 }}>Delete</button>
+                  </td>
+                </tr>
+              ))}
+              {users.length === 0 && (
+                <tr>
+                  <td colSpan="7" style={{ padding: "24px", textAlign: "center", color: C.gray400 }}>No users found.</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </Card>
+    </div>
+  );
+};
+
+// ─── TEACHER UI COMPONENTS ────────────────────────────────────────────────────
+const TeacherSidebar = ({ active, onNav, collapsed, onToggle }) => (
+  <aside className="app-sidebar" style={{
+    width: collapsed ? 64 : 230, minHeight:"100vh", background:C.navyDark,
+    display:"flex", flexDirection:"column", transition:"width 0.22s ease", flexShrink:0,
+    position:"sticky", top:0, height:"100vh", overflowY:"auto", overflowX:"hidden",
+  }}>
+    <div style={{ padding: collapsed ? "18px 0" : "20px 18px", borderBottom:`1px solid rgba(255,255,255,0.08)`,
+      display:"flex", alignItems:"center", gap:10, cursor:"pointer" }} onClick={onToggle}>
+      <div style={{ width:34, height:34, borderRadius:8, background:C.amber, flexShrink:0,
+        display:"flex", alignItems:"center", justifyContent:"center", fontSize:18, fontWeight:700, color:"#fff" }}>T</div>
+      {!collapsed && <div>
+        <div style={{ color:"#fff", fontWeight:700, fontSize:15, lineHeight:1 }}>Teacher Portal</div>
+        <div style={{ color:"rgba(255,255,255,0.45)", fontSize:11, marginTop:2 }}>Sunrise Academy</div>
+      </div>}
+    </div>
+    {!collapsed && (
+      <div style={{ margin:"14px 14px 6px", background:"rgba(255,255,255,0.06)", borderRadius:10, padding:"10px 12px" }}>
+        <div style={{ display:"flex", alignItems:"center", gap:8 }}>
+          <div style={{ width:30, height:30, borderRadius:"50%", background:C.amber, display:"flex",
+            alignItems:"center", justifyContent:"center", fontSize:13, fontWeight:700, color:"#fff", flexShrink:0 }}>K</div>
+          <div>
+            <div style={{ color:"#fff", fontSize:12, fontWeight:600 }}>{localStorage.getItem("userName") || "Teacher"}</div>
+            <div style={{ color:"rgba(255,255,255,0.45)", fontSize:11 }}>Class 10-A</div>
+          </div>
+        </div>
+      </div>
+    )}
+    <nav style={{ padding:"8px 8px", flex:1 }}>
+      {TEACHER_NAV.map(n => (
+        <button key={n.id} onClick={() => onNav(n.id)}
+          style={{ width:"100%", display:"flex", alignItems:"center", gap:10, padding: collapsed ? "10px 0" : "9px 12px",
+            marginBottom:2, borderRadius:8, border:"none", cursor:"pointer", textAlign:"left",
+            background: active===n.id ? "rgba(217,119,6,0.8)" : "transparent",
+            color: active===n.id ? "#fff" : "rgba(255,255,255,0.65)",
+            justifyContent: collapsed ? "center" : "flex-start",
+            transition:"all 0.15s", fontSize:13, fontWeight: active===n.id ? 600 : 400,
+          }}>
+          <span style={{ fontSize:16, flexShrink:0 }}>{n.icon}</span>
+          {!collapsed && <span>{n.label}</span>}
+        </button>
+      ))}
+    </nav>
+  </aside>
+);
+
+const TeacherDashboard = ({ onNav }) => {
+  return (
+    <div>
+      <SectionHeader title="Class Overview" subtitle="Quick view of Class 10-A" />
+      <div style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:14, marginBottom:22 }}>
+        <StatCard icon="👥" label="Total Students" value={STUDENTS.length} accent={C.blue} />
+        <StatCard icon="📅" label="Avg Attendance" value="92%" accent={C.green} />
+        <StatCard icon="📝" label="Assignments Pending" value={ASSIGNMENTS.filter(a=>a.status==="Pending").length} accent={C.amber} />
+      </div>
+      <Card>
+        <div style={{ fontSize:14, fontWeight:700, color:C.gray800, marginBottom:14 }}>Students List</div>
+        <table style={{ width:"100%", borderCollapse:"collapse", fontSize:13 }}>
+          <thead>
+            <tr style={{ background:C.gray50 }}>
+              <th style={{ padding:"10px 12px", textAlign:"left", fontWeight:700, color:C.gray600 }}>Roll No</th>
+              <th style={{ padding:"10px 12px", textAlign:"left", fontWeight:700, color:C.gray600 }}>Name</th>
+              <th style={{ padding:"10px 12px", textAlign:"left", fontWeight:700, color:C.gray600 }}>Grade</th>
+              <th style={{ padding:"10px 12px", textAlign:"center", fontWeight:700, color:C.gray600 }}>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {STUDENTS.map(s => (
+              <tr key={s.id} style={{ borderBottom:`1px solid ${C.gray100}` }}>
+                <td style={{ padding:"10px 12px", color:C.gray700 }}>{s.roll_No}</td>
+                <td style={{ padding:"10px 12px", fontWeight:600, color:C.gray900 }}>{s.name}</td>
+                <td style={{ padding:"10px 12px", fontWeight:700, color:C.green }}>{s.grade}</td>
+                <td style={{ padding:"10px 12px", textAlign:"center" }}>
+                  <button onClick={() => onNav("teacher_edit")} style={{ padding:"4px 12px", background:C.blueLight, color:C.blue, border:"none", borderRadius:6, cursor:"pointer", fontWeight:600 }}>Edit Records</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </Card>
+    </div>
+  );
+};
+
+const TeacherEditAcademic = ({ updateApp }) => {
+  const [tab, setTab] = useState("Tests");
+
+  const [testForm, setTestForm] = useState({ subject:SUBJECTS[0], date:new Date().toISOString().split('T')[0], marks:"", max:100, type:"Daily Test", remarks:"" });
+  const [attForm, setAttForm] = useState({ date:new Date().toISOString().split('T')[0], status:"Present" });
+  const [assForm, setAssForm] = useState({ title:"", subject:SUBJECTS[0], dueDate:new Date().toISOString().split('T')[0], status:"Pending", desc:"" });
+  const [remForm, setRemForm] = useState({ type:"Achievement", text:"" });
+
+  const submitTest = async (e) => {
+    e.preventDefault();
+    try {
+      const payload = { ...testForm, marks: Number(testForm.marks), max: Number(testForm.max) };
+      const res = await fetch(`http://172.23.51.82/progress-view-api/api.php?action=addTest`, {
+        method: 'POST',
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      if (data.success) {
+        TESTS.unshift(data.data);
+        alert("Test added successfully!");
+        setTestForm({ ...testForm, marks:"", remarks:"" });
+        updateApp();
+      } else {
+        alert("Server Error: " + data.message);
+      }
+    } catch(err) {
+      alert("Network Error");
+    }
+  };
+
+  const submitAtt = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch(`http://172.23.51.82/progress-view-api/api.php?action=addAttendance`, {
+        method: 'POST',
+        body: JSON.stringify(attForm)
+      });
+      const data = await res.json();
+      if (data.success) {
+        ATTENDANCE.unshift(data.data);
+        alert("Attendance recorded!");
+        updateApp();
+      } else {
+        alert("Server Error: " + data.message);
+      }
+    } catch(err) {
+      alert("Network Error");
+    }
+  };
+
+  const submitAss = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch(`http://172.23.51.82/progress-view-api/api.php?action=addAssignment`, {
+        method: 'POST',
+        body: JSON.stringify(assForm)
+      });
+      const data = await res.json();
+      if (data.success) {
+        ASSIGNMENTS.unshift(data.data);
+        alert("Assignment added!");
+        setAssForm({ ...assForm, title:"", desc:"" });
+        updateApp();
+      } else {
+        alert("Server Error: " + data.message);
+      }
+    } catch(err) {
+      alert("Network Error");
+    }
+  };
+
+  const submitRem = async (e) => {
+    e.preventDefault();
+    const iconMap = { Achievement:"🏆", Recommendation:"📝", Improvement:"📊" };
+    const payload = {
+      teacher: localStorage.getItem("userName") || "Teacher",
+      subject: "Class Teacher",
+      date: new Date().toISOString().split('T')[0],
+      type: remForm.type,
+      text: remForm.text,
+      icon: iconMap[remForm.type] || "💬"
+    };
+    try {
+      const res = await fetch(`http://172.23.51.82/progress-view-api/api.php?action=addRemark`, {
+        method: 'POST',
+        body: JSON.stringify(payload)
+      });
+      const data = await res.json();
+      if (data.success) {
+        REMARKS.unshift(data.data);
+        alert("Remark added!");
+        setRemForm({ ...remForm, text:"" });
+        updateApp();
+      } else {
+        alert("Server Error: " + data.message);
+      }
+    } catch(err) {
+      alert("Network Error");
+    }
+  };
+
+  const tabs = ["Tests", "Assignments", "Attendance", "Remarks"];
+
+  return (
+    <div>
+      <SectionHeader title="Edit Student Records" subtitle="Add new academic entries for Sri Rakesh. R" />
+      <div style={{ display:"flex", gap:10, marginBottom:20, borderBottom:`1px solid ${C.gray200}`, paddingBottom:10 }}>
+        {tabs.map(t => (
+          <button key={t} onClick={()=>setTab(t)}
+            style={{ padding:"8px 16px", borderRadius:8, border:"none", background:tab===t?C.blue:C.gray100, color:tab===t?"#fff":C.gray700, fontWeight:600, cursor:"pointer" }}>
+            {t}
+          </button>
+        ))}
+      </div>
+
+      <Card>
+        {tab === "Tests" && (
+          <form onSubmit={submitTest} style={{ display:"flex", flexDirection:"column", gap:14 }}>
+            <h3 style={{ margin:0, fontSize:16, color:C.gray900 }}>Add New Test Score</h3>
+            <div className="responsive-row">
+              <div style={{ flex:1 }}><label style={{ fontSize:12, fontWeight:600, color:C.gray700 }}>Subject</label><select value={testForm.subject} onChange={e=>setTestForm({...testForm,subject:e.target.value})} style={{ width:"100%", padding:8, marginTop:4, borderRadius:6, border:`1px solid ${C.gray300}` }}>{SUBJECTS.map(s=><option key={s} value={s}>{s}</option>)}</select></div>
+              <div style={{ flex:1 }}><label style={{ fontSize:12, fontWeight:600, color:C.gray700 }}>Type</label><select value={testForm.type} onChange={e=>setTestForm({...testForm,type:e.target.value})} style={{ width:"100%", padding:8, marginTop:4, borderRadius:6, border:`1px solid ${C.gray300}` }}><option>Daily Test</option><option>Weekly Assessment</option><option>Monthly Assessment</option></select></div>
+            </div>
+            <div className="responsive-row">
+              <div style={{ flex:1 }}><label style={{ fontSize:12, fontWeight:600, color:C.gray700 }}>Date</label><input type="date" required value={testForm.date} onChange={e=>setTestForm({...testForm,date:e.target.value})} style={{ width:"100%", padding:8, marginTop:4, borderRadius:6, border:`1px solid ${C.gray300}`, boxSizing:"border-box" }} /></div>
+              <div style={{ flex:1 }}><label style={{ fontSize:12, fontWeight:600, color:C.gray700 }}>Marks</label><input type="number" required value={testForm.marks} onChange={e=>setTestForm({...testForm,marks:e.target.value})} style={{ width:"100%", padding:8, marginTop:4, borderRadius:6, border:`1px solid ${C.gray300}`, boxSizing:"border-box" }} /></div>
+              <div style={{ flex:1 }}><label style={{ fontSize:12, fontWeight:600, color:C.gray700 }}>Max Marks</label><input type="number" required value={testForm.max} onChange={e=>setTestForm({...testForm,max:e.target.value})} style={{ width:"100%", padding:8, marginTop:4, borderRadius:6, border:`1px solid ${C.gray300}`, boxSizing:"border-box" }} /></div>
+            </div>
+            <div>
+              <label style={{ fontSize:12, fontWeight:600, color:C.gray700 }}>Remarks</label>
+              <textarea value={testForm.remarks} onChange={e=>setTestForm({...testForm,remarks:e.target.value})} rows={3} style={{ width:"100%", padding:8, marginTop:4, borderRadius:6, border:`1px solid ${C.gray300}`, boxSizing:"border-box" }} />
+            </div>
+            <button type="submit" style={{ padding:"10px 16px", background:C.blue, color:"#fff", border:"none", borderRadius:6, fontWeight:600, cursor:"pointer", width:"fit-content" }}>Save Test Score</button>
+          </form>
+        )}
+        
+        {tab === "Assignments" && (
+          <form onSubmit={submitAss} style={{ display:"flex", flexDirection:"column", gap:14 }}>
+            <h3 style={{ margin:0, fontSize:16, color:C.gray900 }}>Create New Assignment</h3>
+            <div className="responsive-row">
+              <div style={{ flex:2 }}><label style={{ fontSize:12, fontWeight:600, color:C.gray700 }}>Title</label><input type="text" required value={assForm.title} onChange={e=>setAssForm({...assForm,title:e.target.value})} style={{ width:"100%", padding:8, marginTop:4, borderRadius:6, border:`1px solid ${C.gray300}`, boxSizing:"border-box" }} /></div>
+              <div style={{ flex:1 }}><label style={{ fontSize:12, fontWeight:600, color:C.gray700 }}>Subject</label><select value={assForm.subject} onChange={e=>setAssForm({...assForm,subject:e.target.value})} style={{ width:"100%", padding:8, marginTop:4, borderRadius:6, border:`1px solid ${C.gray300}` }}>{SUBJECTS.map(s=><option key={s} value={s}>{s}</option>)}</select></div>
+            </div>
+            <div className="responsive-row">
+              <div style={{ flex:1 }}><label style={{ fontSize:12, fontWeight:600, color:C.gray700 }}>Due Date</label><input type="date" required value={assForm.dueDate} onChange={e=>setAssForm({...assForm,dueDate:e.target.value})} style={{ width:"100%", padding:8, marginTop:4, borderRadius:6, border:`1px solid ${C.gray300}`, boxSizing:"border-box" }} /></div>
+              <div style={{ flex:1 }}><label style={{ fontSize:12, fontWeight:600, color:C.gray700 }}>Status</label><select value={assForm.status} onChange={e=>setAssForm({...assForm,status:e.target.value})} style={{ width:"100%", padding:8, marginTop:4, borderRadius:6, border:`1px solid ${C.gray300}` }}><option>Pending</option><option>Submitted</option><option>Overdue</option></select></div>
+            </div>
+            <div>
+              <label style={{ fontSize:12, fontWeight:600, color:C.gray700 }}>Description</label>
+              <textarea required value={assForm.desc} onChange={e=>setAssForm({...assForm,desc:e.target.value})} rows={3} style={{ width:"100%", padding:8, marginTop:4, borderRadius:6, border:`1px solid ${C.gray300}`, boxSizing:"border-box" }} />
+            </div>
+            <button type="submit" style={{ padding:"10px 16px", background:C.blue, color:"#fff", border:"none", borderRadius:6, fontWeight:600, cursor:"pointer", width:"fit-content" }}>Save Assignment</button>
+          </form>
+        )}
+
+        {tab === "Attendance" && (
+          <form onSubmit={submitAtt} style={{ display:"flex", flexDirection:"column", gap:14 }}>
+            <h3 style={{ margin:0, fontSize:16, color:C.gray900 }}>Record Attendance</h3>
+            <div className="responsive-row">
+              <div style={{ flex:1 }}><label style={{ fontSize:12, fontWeight:600, color:C.gray700 }}>Date</label><input type="date" required value={attForm.date} onChange={e=>setAttForm({...attForm,date:e.target.value})} style={{ width:"100%", padding:8, marginTop:4, borderRadius:6, border:`1px solid ${C.gray300}`, boxSizing:"border-box" }} /></div>
+              <div style={{ flex:1 }}><label style={{ fontSize:12, fontWeight:600, color:C.gray700 }}>Status</label><select value={attForm.status} onChange={e=>setAttForm({...attForm,status:e.target.value})} style={{ width:"100%", padding:8, marginTop:4, borderRadius:6, border:`1px solid ${C.gray300}` }}><option>Present</option><option>Absent</option><option>Late</option></select></div>
+            </div>
+            <button type="submit" style={{ padding:"10px 16px", background:C.blue, color:"#fff", border:"none", borderRadius:6, fontWeight:600, cursor:"pointer", width:"fit-content" }}>Save Attendance</button>
+          </form>
+        )}
+
+        {tab === "Remarks" && (
+          <form onSubmit={submitRem} style={{ display:"flex", flexDirection:"column", gap:14 }}>
+            <h3 style={{ margin:0, fontSize:16, color:C.gray900 }}>Add Teacher Remark</h3>
+            <div>
+              <label style={{ fontSize:12, fontWeight:600, color:C.gray700 }}>Type</label>
+              <select value={remForm.type} onChange={e=>setRemForm({...remForm,type:e.target.value})} style={{ width:"100%", padding:8, marginTop:4, borderRadius:6, border:`1px solid ${C.gray300}`, boxSizing:"border-box" }}>
+                <option>Achievement</option><option>Improvement</option><option>Recommendation</option>
+              </select>
+            </div>
+            <div>
+              <label style={{ fontSize:12, fontWeight:600, color:C.gray700 }}>Remark Text</label>
+              <textarea required value={remForm.text} onChange={e=>setRemForm({...remForm,text:e.target.value})} rows={4} style={{ width:"100%", padding:8, marginTop:4, borderRadius:6, border:`1px solid ${C.gray300}`, boxSizing:"border-box" }} />
+            </div>
+            <button type="submit" style={{ padding:"10px 16px", background:C.blue, color:"#fff", border:"none", borderRadius:6, fontWeight:600, cursor:"pointer", width:"fit-content" }}>Save Remark</button>
+          </form>
+        )}
+      </Card>
+    </div>
+  );
+};
+
 // ─── APP ROOT ─────────────────────────────────────────────────────────────────
 export default function App() {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [page, setPage] = useState("dashboard");
+  const role = typeof localStorage !== 'undefined' ? localStorage.getItem("userRole") : null;
+  const [page, setPage] = useState(role === "Admin" ? "admin_dashboard" : role === "Teacher" ? "teacher_dashboard" : "dashboard");
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [updateKey, setUpdateKey] = useState(0);
+  const [dataLoaded, setDataLoaded] = useState(false);
 
+  useEffect(() => {
+    fetch(`http://172.23.51.82/progress-view-api/api.php?action=getAllData`)
+      .then(res => res.json())
+      .then(res => {
+        if (res.success && res.data) {
+          TESTS = res.data.tests || [];
+          ASSIGNMENTS = res.data.assignments || [];
+          ATTENDANCE = res.data.attendance || [];
+          REMARKS = res.data.remarks || [];
+          USERS = res.data.users || [];
+        }
+        setDataLoaded(true);
+      })
+      .catch(err => {
+        console.error("API Error:", err);
+        setDataLoaded(true);
+      });
+  }, []);
 
-  if (!loggedIn) return <LoginPage onLogin={()=>setLoggedIn(true)} />;
+  const forceUpdate = () => setUpdateKey(k => k + 1);
+
+  if (!dataLoaded) return <div style={{ minHeight:"100vh", display:"flex", alignItems:"center", justifyContent:"center", background:C.navyDark, color:"#fff", fontSize: 18, fontWeight: 'bold' }}>Loading database...</div>;
+
+  if (!loggedIn) return <LoginPage onLogin={() => {
+    setLoggedIn(true);
+    const r = localStorage.getItem("userRole");
+    setPage(r === "Admin" ? "admin_dashboard" : r === "Teacher" ? "teacher_dashboard" : "dashboard");
+  }} />;
 
   const pageMap = {
     dashboard: <Dashboard onNav={setPage} />,
@@ -1044,20 +1552,24 @@ export default function App() {
     yearly: <YearlyProgress onNav={setPage} />,
     remarks: <TeacherRemarks onNav={setPage} />,
     announcements: <AnnouncementsPage onNav={setPage} />,
+    teacher_dashboard: <TeacherDashboard onNav={setPage} />,
+    teacher_edit: <TeacherEditAcademic updateApp={forceUpdate} />,
+    admin_dashboard: <AdminDashboard onNav={setPage} />
   };
 
   return (
-    <div style={{ display:"flex", minHeight:"100vh", background:C.gray50, fontFamily:"-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" }}>
-      <Sidebar active={page} onNav={setPage} collapsed={sidebarCollapsed} onToggle={()=>setSidebarCollapsed(v=>!v)} />
+    <div key={updateKey} className="app-layout" style={{ background:C.gray50, fontFamily:"-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif" }}>
+      {role === "Admin" ?
+        <AdminSidebar active={page} onNav={setPage} collapsed={sidebarCollapsed} onToggle={()=>setSidebarCollapsed(v=>!v)} /> :
+       role === "Teacher" ? 
+        <TeacherSidebar active={page} onNav={setPage} collapsed={sidebarCollapsed} onToggle={()=>setSidebarCollapsed(v=>!v)} /> :
+        <Sidebar active={page} onNav={setPage} collapsed={sidebarCollapsed} onToggle={()=>setSidebarCollapsed(v=>!v)} />
+      }
       <div style={{ flex:1, display:"flex", flexDirection:"column", minWidth:0 }}>
         <Topbar page={page} onLogout={()=>setLoggedIn(false)} />
-        <main style={{ flex:1, padding:"22px 24px", overflowY:"auto" }}>
-
-
-
-  {pageMap[page]}
-
-</main>
+        <main className="app-main-content" style={{ flex:1, padding:"22px 24px", overflowY:"auto" }}>
+          {pageMap[page]}
+        </main>
       </div>
     </div>
   );
